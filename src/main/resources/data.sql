@@ -1,0 +1,8 @@
+INSERT INTO CATEGORIES ( NAME, CODE,DESCRIPTION) VALUES
+('Gastronomía','GAS',null);
+
+INSERT INTO PRODUCTS (NAME, PRICE, STOCK, CATEGORY_ID) VALUES
+('Ollas', 15.50, 10, 1),
+('Cuchillos', 15.50, 10, 1),
+('Palillos', 15.50, 10, 1),
+('Tazas', 35.50, 10, 1);

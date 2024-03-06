@@ -1,0 +1,1223 @@
+{
+	"info": {
+		"_postman_id": "ee4b11af-a365-4077-85ac-32065e08f785",
+		"name": "Tick-Brick-OpenAPI definition",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29941786"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Get product By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"3"
+									]
+								},
+								"description": "Gets a product by ID"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stock\": \"<integer>\",\n  \"category\": {\n    \"id\": \"<integer>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "Product Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stock\": \"<integer>\",\n  \"category\": {\n    \"id\": \"<integer>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a Product by ID",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Pasta\",\n  \"price\": 150.50,\n  \"stock\": 10,\n  \"category\": {\n    \"id\": 1\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/4",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"4"
+									]
+								},
+								"description": "Updates a Product with the specified ID"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stock\": \"<integer>\",\n  \"category\": {\n    \"id\": \"<integer>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stock\": \"<integer>\",\n  \"category\": {\n    \"id\": \"<integer>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "Product Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stock\": \"<integer>\",\n  \"category\": {\n    \"id\": \"<integer>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stock\": \"<integer>\",\n  \"category\": {\n    \"id\": \"<integer>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a Product by ID",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Deletes a Product with the product ID"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								},
+								{
+									"name": "Product Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "stock",
+					"item": [
+						{
+							"name": "Gets product By stock",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/stock?stock=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"stock"
+									],
+									"query": [
+										{
+											"key": "stock",
+											"value": "10",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Gets all products by stock"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/stock?stock=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"stock"
+											],
+											"query": [
+												{
+													"key": "stock",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  }\n]"
+								},
+								{
+									"name": "Product Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/stock?stock=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"stock"
+											],
+											"query": [
+												{
+													"key": "stock",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "price",
+					"item": [
+						{
+							"name": "Gets products by price",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/price?price=15.50",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"price"
+									],
+									"query": [
+										{
+											"key": "price",
+											"value": "15.50",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Gets all products by price"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/price?price=<double>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"price"
+											],
+											"query": [
+												{
+													"key": "price",
+													"value": "<double>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  }\n]"
+								},
+								{
+									"name": "Product Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/price?price=<double>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"price"
+											],
+											"query": [
+												{
+													"key": "price",
+													"value": "<double>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "pageable",
+					"item": [
+						{
+							"name": "Get pageable list of products",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/pageable?page=0&size=2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"pageable"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0",
+											"description": "Zero-based page index (0..N)"
+										},
+										{
+											"key": "size",
+											"value": "2",
+											"description": "The size of the page to be returned"
+										},
+										{
+											"key": "sort",
+											"value": "<string>",
+											"description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "<string>",
+											"description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Obtains a pageable list of product"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/pageable?page=0&size=20&sort=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"pageable"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0",
+													"description": "Zero-based page index (0..N)"
+												},
+												{
+													"key": "size",
+													"value": "20",
+													"description": "The size of the page to be returned"
+												},
+												{
+													"key": "sort",
+													"value": "<string>",
+													"description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"totalElements\": \"<long>\",\n  \"totalPages\": \"<integer>\",\n  \"first\": \"<boolean>\",\n  \"last\": \"<boolean>\",\n  \"size\": \"<integer>\",\n  \"content\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"price\": \"<double>\",\n      \"stock\": \"<integer>\",\n      \"category\": {\n        \"id\": \"<integer>\",\n        \"code\": \"<string>\",\n        \"name\": \"<string>\",\n        \"description\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"price\": \"<double>\",\n      \"stock\": \"<integer>\",\n      \"category\": {\n        \"id\": \"<integer>\",\n        \"code\": \"<string>\",\n        \"name\": \"<string>\",\n        \"description\": \"<string>\"\n      }\n    }\n  ],\n  \"number\": \"<integer>\",\n  \"sort\": {\n    \"empty\": \"<boolean>\",\n    \"sorted\": \"<boolean>\",\n    \"unsorted\": \"<boolean>\"\n  },\n  \"numberOfElements\": \"<integer>\",\n  \"pageable\": {\n    \"offset\": \"<long>\",\n    \"sort\": {\n      \"empty\": \"<boolean>\",\n      \"sorted\": \"<boolean>\",\n      \"unsorted\": \"<boolean>\"\n    },\n    \"pageNumber\": \"<integer>\",\n    \"pageSize\": \"<integer>\",\n    \"paged\": \"<boolean>\",\n    \"unpaged\": \"<boolean>\"\n  },\n  \"empty\": \"<boolean>\"\n}"
+								},
+								{
+									"name": "Page of product Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/pageable?page=0&size=20&sort=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"pageable"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0",
+													"description": "Zero-based page index (0..N)"
+												},
+												{
+													"key": "size",
+													"value": "20",
+													"description": "The size of the page to be returned"
+												},
+												{
+													"key": "sort",
+													"value": "<string>",
+													"description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported."
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"totalElements\": \"<long>\",\n  \"totalPages\": \"<integer>\",\n  \"first\": \"<boolean>\",\n  \"last\": \"<boolean>\",\n  \"size\": \"<integer>\",\n  \"content\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"price\": \"<double>\",\n      \"stock\": \"<integer>\",\n      \"category\": {\n        \"id\": \"<integer>\",\n        \"code\": \"<string>\",\n        \"name\": \"<string>\",\n        \"description\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"price\": \"<double>\",\n      \"stock\": \"<integer>\",\n      \"category\": {\n        \"id\": \"<integer>\",\n        \"code\": \"<string>\",\n        \"name\": \"<string>\",\n        \"description\": \"<string>\"\n      }\n    }\n  ],\n  \"number\": \"<integer>\",\n  \"sort\": {\n    \"empty\": \"<boolean>\",\n    \"sorted\": \"<boolean>\",\n    \"unsorted\": \"<boolean>\"\n  },\n  \"numberOfElements\": \"<integer>\",\n  \"pageable\": {\n    \"offset\": \"<long>\",\n    \"sort\": {\n      \"empty\": \"<boolean>\",\n      \"sorted\": \"<boolean>\",\n      \"unsorted\": \"<boolean>\"\n    },\n    \"pageNumber\": \"<integer>\",\n    \"pageSize\": \"<integer>\",\n    \"paged\": \"<boolean>\",\n    \"unpaged\": \"<boolean>\"\n  },\n  \"empty\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "filter",
+					"item": [
+						{
+							"name": "Gets products By Filter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/filter?name=llos&price=15.50&stock=10&category=GastronomÃ­a",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"filter"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "llos"
+										},
+										{
+											"key": "price",
+											"value": "15.50"
+										},
+										{
+											"key": "stock",
+											"value": "10"
+										},
+										{
+											"key": "category",
+											"value": "GastronomÃ­a"
+										}
+									]
+								},
+								"description": "Gets all product by Filter"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/filter?name=<string>&price=<double>&stock=<integer>&category=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"filter"
+											],
+											"query": [
+												{
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"key": "price",
+													"value": "<double>"
+												},
+												{
+													"key": "stock",
+													"value": "<integer>"
+												},
+												{
+													"key": "category",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  }\n]"
+								},
+								{
+									"name": "Product Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/filter?name=<string>&price=<double>&stock=<integer>&category=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"filter"
+											],
+											"query": [
+												{
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"key": "price",
+													"value": "<double>"
+												},
+												{
+													"key": "stock",
+													"value": "<integer>"
+												},
+												{
+													"key": "category",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "category",
+					"item": [
+						{
+							"name": "Get all category",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/category/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"category",
+										""
+									]
+								},
+								"description": "Gets a list of all category"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/category/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"category",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get product By name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/products?name=llos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "llos",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Gets a product by name"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products?name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  }\n]"
+						},
+						{
+							"name": "Product Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products?name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stock\": \"<integer>\",\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create a new Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stock\": \"<integer>\",\n  \"category\": {\n    \"id\": \"<integer>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						},
+						"description": "Create a new Product"
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stock\": \"<integer>\",\n  \"category\": {\n    \"id\": \"<integer>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stock\": \"<integer>\",\n  \"category\": {\n    \"id\": \"<integer>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  }\n}"
+						},
+						{
+							"name": "Product Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stock\": \"<integer>\",\n  \"category\": {\n    \"id\": \"<integer>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stock\": \"<integer>\",\n  \"category\": {\n    \"id\": \"<integer>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/api"
+		}
+	]
+}
