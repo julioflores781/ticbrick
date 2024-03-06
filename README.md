@@ -57,6 +57,11 @@ Cada endpoint tiene su descripción y los posibles resultados.
 En la ruta siguiente dentro del proyecto encontraras la coleccion de postman:
 - **src/main/resources/Tick-Brick-OpenAPI definition.postman_collection.json**
 
+## Solucion a Cliente Rest Externo:
+
+"He implementado un sistema que utiliza una tabla en la base de datos para gestionar datos actualizados, los cuales se actualizan o persisten cada tres horas mediante un mecanismo de caché. Este sistema se integra con una API REST externa, la cual se consulta cada tres horas para detectar y actualizar cualquier registro nuevo en la base de datos. Además, se incluye una funcionalidad de monitoreo para verificar si el servicio externo está inactivo o si no se puede acceder a él. En caso de fallo, el sistema recurre a los datos almacenados en la base de datos y los almacena en caché durante tres horas. De esta manera, si se accede al endpoint '/category/', los datos estarán disponibles en la caché, garantizando una respuesta rápida y eficiente."
+
+
 ## Contacto
 
 Si tienes alguna pregunta o problema, no dudes en contactarme [correo electrónico](mailto:julioflores781@gmail.com).
